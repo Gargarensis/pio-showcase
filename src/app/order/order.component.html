@@ -1,0 +1,38 @@
+<form>
+    <div class="row mb-4">
+        <div class="col">
+            <label>Nome:</label>
+            <input type="text" class="form-control" placeholder="Nome" [(ngModel)]="order.name" name="name">
+        </div>
+        <div class="col">
+            <label>Cognome:</label>
+            <input type="text" class="form-control" placeholder="Cognome" [(ngModel)]="order.surname" name="surname">
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col">
+            <label>Indirizzo:</label>
+            <input type="text" class="form-control" placeholder="Indirizzo e numero civico" [(ngModel)]="order.address" name="address">
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col">
+            <label>Merce da comprare:</label>
+            <input type="text" class="form-control" placeholder="PlayStation 5" [(ngModel)]="order.goods" name="goods">
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col">
+            <label>Metodo di pagamento:</label>
+            <select class="form-select">
+                <option selected disabled>Scegli...</option>
+                <option value="1">Contanti</option>
+                <option value="2">Mastercard</option>
+                <option value="3">VISA</option>
+            </select>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-5 px-4 mx-auto d-block">Ordina</button>
+</form>
