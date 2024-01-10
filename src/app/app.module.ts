@@ -22,7 +22,8 @@ import { ShowcaseComponent } from './showcase/showcase.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
