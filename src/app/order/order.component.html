@@ -34,5 +34,31 @@
         </div>
     </div>
 
-    <button type="submit" class="btn btn-primary mt-5 px-4 mx-auto d-block">Ordina</button>
+    <button type="submit" class="btn btn-primary mt-5 px-4 mx-auto d-block" (click)="open(orderModal)">Ordina</button>
 </form>
+
+
+<ng-template #orderModal let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-title">Ordine creato!</h4>
+        <button
+            type="button"
+            class="btn-close"
+            aria-label="Close button"
+            aria-describedby="modal-title"
+            (click)="modal.dismiss('Cross click')"
+        ></button>
+    </div>
+    <div class="modal-body">
+        <p>
+            Il prodotto è stato ordinato!<br>
+            Potete seguirne lo stato nella lista degli ordini.<br><br>
+
+            Vi verrà proposto un prezzo per l'articolo entro 2-4 ore lavorative.
+        </p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="modal.dismiss('cancel click')">Indietro</button>
+        <button type="button" ngbAutofocus class="btn btn-primary" (click)="modal.dismiss('ok click')" routerLink="/history">Alla lista ordini</button>
+    </div>
+</ng-template>

@@ -49,7 +49,7 @@
             <td>12/12/2023</td>
             <td style="color: orange;">PREZZO DA ACCETTARE</td>
             <td>
-                <button type="button" class="btn btn-success">Accetta</button>
+                <button type="button" class="btn btn-success" (click)="open(acceptModal)">Accetta</button>
                 <button type="button" class="btn btn-danger" (click)="open(refuseModal)">Rifiuta</button>
             </td>
         </tr>
@@ -102,7 +102,29 @@
         <textarea class="form-control" placeholder="Prezzo troppo alto, é passato troppo tempo, ho sbagliato l'ordinazione, ..." rows="3"></textarea>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Annulla</button>
+        <button type="button" class="btn btn-secondary" (click)="modal.dismiss('cancel click')">Annulla</button>
         <button type="button" ngbAutofocus class="btn btn-danger" (click)="modal.close('Ok click')">Cancella l'ordine</button>
+    </div>
+</ng-template>
+
+<ng-template #acceptModal let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-title">Prezzo accettato!</h4>
+        <button
+            type="button"
+            class="btn-close"
+            aria-label="Close button"
+            aria-describedby="modal-title"
+            (click)="modal.dismiss('Cross click')"
+        ></button>
+    </div>
+    <div class="modal-body">
+        <p>
+            Il prodotto verrà inviato quando il pagamento verrà ricevuto.
+        </p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Indietro</button>
+        <button type="button" ngbAutofocus class="btn btn-success" (click)="modal.close('Ok click')">Procedi al pagamento</button>
     </div>
 </ng-template>
